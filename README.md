@@ -2,15 +2,15 @@
 
 ## Modify urdf files
 
-- /home/walker/Summer/legged_change2go1/src/legged_control/legged_examples/legged_unitree/legged_unitree_description/meshes 
+- `/home/walker/Summer/legged_change2go1/src/legged_control/legged_examples/legged_unitree/legged_unitree_description/meshes`
 
   - Add go1 folder
 
-- /home/walker/Summer/legged_change2go1/src/legged_control/legged_examples/legged_unitree/legged_unitree_description/urdf 
+- `/home/walker/Summer/legged_change2go1/src/legged_control/legged_examples/legged_unitree/legged_unitree_description/urdf `
 
   - Add go1 folder
 
-  - robot_type/const.xacro  compare：
+  - `robot_type/const.xacro`  compare：
 
     | para                    | a1                                     | go1       |
     | ----------------------- | -------------------------------------- | --------- |
@@ -29,28 +29,25 @@
 
 ## Modify legged_unitree_hw
 
-- /home/walker/Summer/legged_change2go1/src/legged_control/legged_examples/legged_unitree/legged_unitree_hw/config
-  - Add go1.yaml
+- `/home/walker/Summer/legged_change2go1/src/legged_control/legged_examples/legged_unitree/legged_unitree_hw/config`
+  - Add `go1.yaml`
 
-- ~/Summer/legged_change2go1/src/legged_control/legged_examples/legged_unitree/legged_unitree_hw/include/legged_unitree_hw
+- `~/Summer/legged_change2go1/src/legged_control/legged_examples/legged_unitree/legged_unitree_hw/include/legged_unitree_hw`
+  - `UnitreeHW.h` same (no change)
+  
+- `~/Summer/legged_change2go1/src/legged_control/legged_examples/legged_unitree/legged_unitree_hw/include`
+  - Change `unitree_legged_sdk` to sdk 3.8.0 (for go1)
+  
+- `~/Summer/legged_control_yangshuo/src/legged_control/legged_examples/legged_unitree/legged_unitree_hw/src`
+  - Modify `UnitreeHW.cpp`, add relative part of go1
 
-  - UnitreeHW.h same (no change)
-
-- ~/Summer/legged_change2go1/src/legged_control/legged_examples/legged_unitree/legged_unitree_hw/include
-
-  - Change unitree_legged_sdk to sdk 3.8.0 (for go1)
-
-- ~/Summer/legged_control_yangshuo/src/legged_control/legged_examples/legged_unitree/legged_unitree_hw/src
-  - Modify UnitreeHW.cpp, add relative part of go1
-
-- ~/Summer/legged_change2go1/src/legged_control/legged_controllers/launch 
-
-  - In load_controller.launch, change the path of urdf
-
-- ~/Summer/legged_change2go1/src/legged_control/legged_examples/legged_unitree/legged_unitree_hw/lib
+- `~/Summer/legged_change2go1/src/legged_control/legged_controllers/launch `
+  - In `load_controller.launch`, change the path of urdf file
+  
+- `~/Summer/legged_change2go1/src/legged_control/legged_examples/legged_unitree/legged_unitree_hw/lib`
   - change the file of lib to sdk 3.8.0 related version，catkin build success
 
-- /home/walker/Summer/legged_change2go1/src/legged_control/legged_controllers/config
+- `/home/walker/Summer/legged_change2go1/src/legged_control/legged_controllers/config`
   - Add go1 folder
 
 Motor jittering when apply to real go1: https://github.com/qiayuanliao/legged_control/issues/9
