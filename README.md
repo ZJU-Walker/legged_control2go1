@@ -1,5 +1,67 @@
 # legged_control
 
+# Changes when applying to go1
+
+## Modify urdf files
+
+- /home/walker/Summer/legged_change2go1/src/legged_control/legged_examples/legged_unitree/legged_unitree_description/meshes 
+
+  - add go1 folder
+
+- /home/walker/Summer/legged_change2go1/src/legged_control/legged_examples/legged_unitree/legged_unitree_description/urdf 
+
+  - add go1 folder
+
+  - robot_type/const.xacro  compare：
+
+    | para                    | a1                                     | go1       |
+    | ----------------------- | -------------------------------------- | --------- |
+    | thigh_shoulder_y_offset | yes                                    | no        |
+    | thigh_x_offset          | yes                                    | no        |
+    | calf_x_offset           | yes                                    | no        |
+    | stick_radius            | no                                     | yes       |
+    | stick_length            | no                                     | yes       |
+    |                         | hip_position_max                       | hip_max   |
+    |                         | hip_position_min                       | hip_min   |
+    |                         | thigh_position_max                     | thigh_max |
+    |                         | thigh_position_min                     | thigh_min |
+    |                         | calf_position_max                      | calf_max  |
+    |                         | calf_position_min                      | calf_min  |
+    |                         | some more parameters of hip/thigh/calf |           |
+
+## Modify legged_unitree_hw
+
+- /home/walker/Summer/legged_change2go1/src/legged_control/legged_examples/legged_unitree/legged_unitree_hw/config
+  - add go1.yaml
+
+- ~/Summer/legged_change2go1/src/legged_control/legged_examples/legged_unitree/legged_unitree_hw/include/legged_unitree_hw
+
+  - UnitreeHW.h same (no change)
+
+- ~/Summer/legged_change2go1/src/legged_control/legged_examples/legged_unitree/legged_unitree_hw/include
+
+  - Change unitree_legged_sdk to sdk 3.8.0 (for go1)
+
+- ~/Summer/legged_control_yangshuo/src/legged_control/legged_examples/legged_unitree/legged_unitree_hw/src
+  - Modify UnitreeHW.cpp, add relative part of go1
+
+- ~/Summer/legged_change2go1/src/legged_control/legged_controllers/launch 
+
+  - load_controller.launch change the path of urdf
+
+![image-20230509094919659](/home/walker/.config/Typora/typora-user-images/image-20230509094919659.png)
+
+![image-20230509094954192](/home/walker/.config/Typora/typora-user-images/image-20230509094954192.png)
+
+change the file of lib to sdk3.8.0 related version，catkin build success
+
+- /home/walker/Summer/legged_change2go1/src/legged_control/legged_controllers/config
+  - add go1 folder
+
+Motor jittering when apply to real go1: https://github.com/qiayuanliao/legged_control/issues/9
+
+set the thread priority: https://leggedrobotics.github.io/ocs2/faq.html
+
 ## Introduction
 
 legged_control is an NMPC-WBC legged robot control stack and framework based
@@ -254,5 +316,4 @@ Predictive Control,” (submitted to) IEEE Trans. Robot., no. August, 2022, doi:
 [4] C. Dario Bellicoso, C. Gehring, J. Hwangbo, P. Fankhauser, and M. Hutter, “Perception-less terrain adaptation
 through whole body control and hierarchical optimization,” in IEEE-RAS International Conference on Humanoid Robots,
 2016, pp. 558–564, doi: 10.1109/HUMANOIDS.2016.7803330.
-# legged_control2go1
 # legged_control2go1
