@@ -1,16 +1,14 @@
-# legged_control
-
 # Changes when applying to go1
 
 ## Modify urdf files
 
 - /home/walker/Summer/legged_change2go1/src/legged_control/legged_examples/legged_unitree/legged_unitree_description/meshes 
 
-  - add go1 folder
+  - Add go1 folder
 
 - /home/walker/Summer/legged_change2go1/src/legged_control/legged_examples/legged_unitree/legged_unitree_description/urdf 
 
-  - add go1 folder
+  - Add go1 folder
 
   - robot_type/const.xacro  compare：
 
@@ -32,7 +30,7 @@
 ## Modify legged_unitree_hw
 
 - /home/walker/Summer/legged_change2go1/src/legged_control/legged_examples/legged_unitree/legged_unitree_hw/config
-  - add go1.yaml
+  - Add go1.yaml
 
 - ~/Summer/legged_change2go1/src/legged_control/legged_examples/legged_unitree/legged_unitree_hw/include/legged_unitree_hw
 
@@ -47,20 +45,19 @@
 
 - ~/Summer/legged_change2go1/src/legged_control/legged_controllers/launch 
 
-  - load_controller.launch change the path of urdf
+  - In load_controller.launch, change the path of urdf
 
-![image-20230509094919659](/home/walker/.config/Typora/typora-user-images/image-20230509094919659.png)
-
-![image-20230509094954192](/home/walker/.config/Typora/typora-user-images/image-20230509094954192.png)
-
-change the file of lib to sdk3.8.0 related version，catkin build success
+- ~/Summer/legged_change2go1/src/legged_control/legged_examples/legged_unitree/legged_unitree_hw/lib
+  - change the file of lib to sdk 3.8.0 related version，catkin build success
 
 - /home/walker/Summer/legged_change2go1/src/legged_control/legged_controllers/config
-  - add go1 folder
+  - Add go1 folder
 
 Motor jittering when apply to real go1: https://github.com/qiayuanliao/legged_control/issues/9
 
-set the thread priority: https://leggedrobotics.github.io/ocs2/faq.html
+Set the thread priority: https://leggedrobotics.github.io/ocs2/faq.html
+
+# legged_control
 
 ## Introduction
 
