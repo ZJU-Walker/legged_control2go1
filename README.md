@@ -1,5 +1,7 @@
 # Changes when applying to go1
 
+This repo is based on [qiayuanliao/legged_control](https://github.com/qiayuanliao/legged_control) and made some changes to make it work on both simulation and real Unitree go1 robot.
+
 ## Modify urdf files
 
 - `/home/walker/Summer/legged_change2go1/src/legged_control/legged_examples/legged_unitree/legged_unitree_description/meshes`
@@ -53,6 +55,20 @@
 Motor jittering when apply to real go1: https://github.com/qiayuanliao/legged_control/issues/9
 
 Set the thread priority: https://leggedrobotics.github.io/ocs2/faq.html
+
+# go1 wired connection
+
+```
+sudo ifconfig enx00e04c86d688 down
+sudo ifconfig enx00e04c86d688 192.168.123.162/24
+sudo ifconfig enx00e04c86d688 up
+```
+
+test
+
+```
+ping -c 3 192.168.123.161
+```
 
 # legged_control
 
