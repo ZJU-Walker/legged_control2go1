@@ -2,6 +2,8 @@
 
 This repo is based on [qiayuanliao/legged_control](https://github.com/qiayuanliao/legged_control) and made some changes to make it work on both simulation and real Unitree go1 robot.
 
+Before you launch on go1, **be sure switch your go1 to damping mode**.
+
 ## Modify urdf files
 
 - `/home/walker/Summer/legged_change2go1/src/legged_control/legged_examples/legged_unitree/legged_unitree_description/meshes`
